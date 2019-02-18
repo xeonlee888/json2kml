@@ -21,11 +21,11 @@ outputFile = "Saved Places.csv"
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 print ('Opening input file "'+inputFile+'"')
-with open (inputFile) as jsonFile:
+with open (inputFile, encoding="utf8") as jsonFile:
     data = json.load (jsonFile)
     
 print ('Creating output file "'+outputFile+'"')   
-with open(outputFile, 'wt') as csvfile:
+with open(outputFile, 'wt', encoding="utf8") as csvfile:
     csvWriter = csv.writer(csvfile,quoting=csv.QUOTE_ALL,lineterminator='\n')
     csvWriter.writerow(['Latitude', 'Longitude', 'Name', 'Address'])
     
